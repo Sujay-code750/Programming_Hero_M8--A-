@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logoImg from "../../../public/images/logo.png";
+import logoImg from "../../public/images/logo.png";
 import Link from "next/link";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";

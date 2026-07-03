@@ -1,12 +1,12 @@
 import { FaShoppingCart } from 'react-icons/fa';
-import bannerImg from '../../../../public/images/banner.png'
+import bannerImg from '../../../public/images/banner.png'
 import { RxLapTimer } from 'react-icons/rx';
 import { RiSecurePaymentFill } from 'react-icons/ri';
 
 const Banner = () => {
   return (
     <div
-     className="hero min-h-screen"
+     className="hero py-20"
          style={{
   backgroundImage: `url(${bannerImg.src ?? bannerImg})`,
 }}
