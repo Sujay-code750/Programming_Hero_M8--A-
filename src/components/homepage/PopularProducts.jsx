@@ -1,11 +1,10 @@
-import Image from "next/image";
+
+import Link from "next/link";
+import ProductCard from "../ProductCard";
 
 const PopularProducts = async () => {
-  const res = await fetch("https://programming-hero-m8-a.vercel.app/products.json");
+   const res = await fetch("https://programming-hero-m8-a.vercel.app/products.json");
   const data = await res.json();
-
-  // console.log(data);
-  console.log(data[1].image);
 
   return (
     <div>
@@ -17,24 +16,13 @@ const PopularProducts = async () => {
               Handpicked essentials loved by our customers.
             </p>
           </div>
-          <button className="btn bg-transparent">View all</button>
+          <button className="btn bg-transparent"><Link href={'/products'}>View all</Link></button>
         </div>
 
 
-        <div className="grid grid-cols-4">
-          {data.map((product) => (
-            <div key={product.id}>
-              <div className="relative aspect-square">
-                <Image
-                  src={product.image}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  alt={product.name}
-                  className="object-cover"
-                ></Image>
-              </div>
-              <h1>{product.name}</h1>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {data.slice(0,4).map((product) => (
+            <ProductCard key={product.id} product={product}></ProductCard>
           ))}
         </div>
       </div>
