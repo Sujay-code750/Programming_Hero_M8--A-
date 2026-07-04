@@ -2,6 +2,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import bannerImg from '../../../public/images/banner.png'
 import { RxLapTimer } from 'react-icons/rx';
 import { RiSecurePaymentFill } from 'react-icons/ri';
+import Link from 'next/link';
 
 const Banner = () => {
   return (
@@ -21,8 +22,8 @@ const Banner = () => {
                 Discover premium essentials designed for sunshine, <br /> comfort, and unforgettable adventures.
               </p>
               <div className='space-x-5 py-5'>
-                <button className="btn btn-lg bg-amber-500 rounded-full w-50 text-white">Shop Collection</button>
-                <button className="btn btn-lg rounded-full w-50 ">View Products</button>
+                <Link href={'/products'}><button className="btn btn-lg bg-amber-500 rounded-full w-50 text-white">Shop Collection</button></Link>
+                <Link href={'/products'}><button className="btn btn-lg rounded-full w-50 ">View Products</button></Link>
               </div>
 
               <div className='flex items-center gap-8 pt-2'>

@@ -1,10 +1,20 @@
+"use client";
 import Image from "next/image";
 import logoImg from "../../public/images/logo.png";
 import Link from "next/link";
+import { authClient, useSession } from "@/lib/auth-client";
 
 const Navbar = () => {
+  const userData = useSession();
+  const user = userData.data?.user;
+
+  const handleSignOut = async () => {
+    await authClient.signOut();
+  };
+  console.log(user);
+
   return (
-    <div>
+    <div className="border-b border-gray-300">
       <div className="container mx-auto">
         <div className="navbar">
           <div className="navbar-start">
@@ -31,20 +41,20 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <li>
-                <Link href={"/"} className="font-semibold">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href={"/products"} className="font-semibold">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link href={"/my-profile"} className="font-semibold">
-                  My Profile
-                </Link>
-              </li>
+                  <Link href={"/"} className="font-semibold">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/products"} className="font-semibold">
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"/my-profile"} className="font-semibold">
+                    My Profile
+                  </Link>
+                </li>
               </ul>
             </div>
             <a className="flex items-center font-bold text-xl bg-transparent border-none">
@@ -74,8 +84,32 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+
           <div className="navbar-end">
-           <Link href={'/login'}> <button className="btn text-white bg-amber-500">Login / Register</button></Link>
+           { user ?
+           <div className="space-x-5">
+             <div className="avatar">
+              <div className=" w-8 rounded-full">
+                <Image
+                  src={user?.image}
+                  alt={user?.name.charAt(0)}
+                  width={10}
+                  height={10}
+                  referrerPolicy="no-referrer"
+                ></Image>
+              </div>
+            </div>
+            <button onClick={handleSignOut} className="btn text-white bg-amber-500">
+              Logout
+            </button>
+           </div>
+            :
+            <Link href={"/login"}>
+              {" "}
+              <button className="btn text-white bg-amber-500">
+                Login / Register
+              </button>
+            </Link>}
           </div>
         </div>
       </div>

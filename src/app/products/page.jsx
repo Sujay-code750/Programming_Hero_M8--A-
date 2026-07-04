@@ -1,8 +1,10 @@
 import ProductCard from "@/components/ProductCard";
 
 const products = async () => {
+
   const res = await fetch("https://programming-hero-m8-a.vercel.app/products.json");
   const data = await res.json();
+
   return (
     <div>
       <div className="container mx-auto p-10">
