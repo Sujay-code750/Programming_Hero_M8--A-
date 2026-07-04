@@ -78,7 +78,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href={"/my-profile"} className="font-semibold">
+                <Link href={"/profile"} className="font-semibold">
                   My Profile
                 </Link>
               </li>

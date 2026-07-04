@@ -32,6 +32,12 @@ const RegisterPage = () => {
     }
   };
 
+    const handleGoogleSignIn = async () =>{
+         await authClient.signIn.social({
+      provider: "google",
+    });
+    }
+
 
   return (
     <div>
@@ -61,7 +67,7 @@ const RegisterPage = () => {
                 <p className="text-xl bg-white px-2 absolute top-1 right-45">Or</p>
             </div>
 
-            <Link href={'/'}><button className="btn w-full"> <FaGoogle /> Continue with google</button></Link>
+            <button onClick={handleGoogleSignIn} className="btn w-full"> <FaGoogle /> Continue with google</button>
 
                 <p className="text-center font-semibold text-lg pt-5">Already have an account? <span className="text-amber-500"><Link href={'/login'}>Login</Link></span></p>
         </form>
