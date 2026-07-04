@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 
 const ProductCard = async ({product}) => {
@@ -26,7 +27,9 @@ const ProductCard = async ({product}) => {
                 </div>
                 
                 <h1 className="font-bold text-xl">${product.price}</h1>
+                <Link href={`/products/${product.id}`}>
                 <button className="btn bg-transparent w-full mt-4">View Details</button>
+                </Link>
               </div>
             </div>
         </div>
