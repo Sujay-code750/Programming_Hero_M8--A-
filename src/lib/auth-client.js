@@ -3,5 +3,5 @@ export const { signIn, signUp, useSession } = createAuthClient()
 
 export const authClient = createAuthClient({
     /** The base URL of the server (optional if you're using the same domain) */
-    baseURL: "http://localhost:3000"
+    baseURL: "https://programming-hero-m8-a.vercel.app"
 })
