@@ -25,7 +25,7 @@ const RegisterPage = () => {
         image, // User image URL (optional)
     });
 
-    // console.log({data, error});
+    console.log({data, error});
 
     if(!error){
       router.push('/')

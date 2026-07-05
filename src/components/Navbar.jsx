@@ -91,8 +91,8 @@ const Navbar = () => {
              <div className="avatar">
               <div className=" w-8 rounded-full">
                 <Image
-                  src={user?.image}
-                  alt={user?.name.charAt(0)}
+                  src={user?.image || "/images/default-avatar.png"}
+                  alt={user?.name?.charAt(0) || "U"}
                   width={10}
                   height={10}
                   referrerPolicy="no-referrer"

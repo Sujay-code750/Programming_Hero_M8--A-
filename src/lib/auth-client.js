@@ -5,4 +5,4 @@ export const authClient = createAuthClient({
     baseURL: "https://programming-hero-m8-a.vercel.app"
 })
 
-export const { signIn, signUp, useSession } = createAuthClient()
+export const { signIn, signUp, useSession } = authClient;

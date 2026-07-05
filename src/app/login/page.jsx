@@ -18,7 +18,7 @@ const LoginPage = () => {
         callbackURL: '/',
     });
 
-    // console.log({data, error});
+    console.log({data, error});
   };
 
   const handleGoogleSignIn = async () =>{
